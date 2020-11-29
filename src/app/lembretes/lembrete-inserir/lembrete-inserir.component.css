@@ -1,0 +1,9 @@
+
+mat-form-field,
+input {
+  width: 100%;
+}
+.example-custom-date-class {
+  background: orange;
+  border-radius: 100%;
+}

@@ -1,0 +1,50 @@
+<mat-card>
+  <form (submit)="onSalvarLembrete(lembreteForm)" #lembreteForm="ngForm">
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Data de cadastro do lembrete:"
+        name="datacadastro"
+        ngModel
+        required
+        minlength="3"
+        #datacadastro="ngModel"
+        [ngModel]="lembrete?.datacadastro"
+      />
+      <mat-error *ngIf="datacadastro.invalid">Digite uma data válida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Data para realizar a atividade"
+        name="datarealizar"
+        ngModel
+        required
+        #datarealizar="ngModel"
+        [ngModel]="lembrete?.datarealizar"
+      />
+      <mat-error *ngIf="datarealizar.invalid">Digite uma data válida</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        placeholder="Descrição da atividade"
+        name="descricao"
+        ngModel
+        required
+        #descricao="ngModel"
+        [ngModel]="lembrete?.descricao"
+      />
+      <mat-error *ngIf="descricao.invalid">Digite uma descrição válida (texto) </mat-error>
+    </mat-form-field>
+
+    <button color="primary" mat-raised-button>
+      Salvar Lembrete
+    </button>
+  </form>
+</mat-card>

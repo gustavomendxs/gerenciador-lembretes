@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-spinner diameter="70" *ngIf="estaCarregando"></mat-spinner>
+
+  <form [formGroup]="form" (submit)="onCadastrar()" *ngIf="!estaCarregando">
+
+
+    <mat-form-field>
+      <input type="text" matInput placeholder="Digite seu usuario" name="usuario" required formControlName="login"/>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="password" matInput placeholder="Crie uma senha" name="senha" formControlName="senha" required/>
+    </mat-form-field>
+
+    <button color="accent" mat-raised-button>
+      Cadastrar
+    </button>
+  </form>
+</mat-card>
